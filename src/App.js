@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Step1Form from './components/Step1Form';
+import Step2Form from './components/Step2Form';
+import Step3Form from './components/Step3Form';
+import Header from './components/Header';
+import EndPage from './components/EndPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Router>
+        <Switch>
+          <Route exact path='/' component={Step1Form} />
+          <Route exact path='/step2' component={Step2Form} />
+          <Route exact path='/step3' component={Step3Form} />
+          <Route exact path='/endpage' component={EndPage} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
