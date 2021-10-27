@@ -25,21 +25,21 @@ const schema = yup.object().shape({
         .string()
         .matches(/^([^0-9]*)$/, "Surname should not contain numbers")
         .matches(/^([A-Za-z]*)$/, "Surname should contain latin letters only")
-        .min(3, "Surname should contain more than 3 letters")
+        .min(3, "Surname should contain at least 3 letters")
         .max(20, "Surname should not contain more than 20 letters")
         .required("Surname is a required field"),
     name: yup
         .string()
         .matches(/^([^0-9]*)$/, "Name should not contain numbers")
         .matches(/^([A-Za-z]*)$/, "Name should contain latin letters only")
-        .min(3, "Name should contain more than 3 letters")
+        .min(3, "Name should contain at least 3 letters")
         .max(20, "Name should not contain more than 20 letters")
         .required("Name is a required field"),
     patronymic: yup
         .string()
         .matches(/^([^0-9]*)$/, "Patronymic should not contain numbers")
         .matches(/^([A-Za-z]*)$/, "Patronymic should contain latin letters only")
-        .min(3, "Patronymic should contain more than 3 letters")
+        .min(3, "Patronymic should contain at least 3 letters")
         .max(20, "Patronymic should not contain more than 20 letters")
         .required("Patronymic is a required field"),
 
@@ -53,7 +53,7 @@ const Step1Form = ({ addedName, addedSurname, addedPatronymic, addedBirthday, ch
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: { name: name, surname: surname, patronymic: patronymic },
-        mode: "onBlur",
+        mode: "onTouched",
         resolver: yupResolver(schema)
     });
 

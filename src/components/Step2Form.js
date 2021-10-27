@@ -24,7 +24,7 @@ const Step1Form = ({ addedEmail, email }) => {
 
     const { register, handleSubmit, formState: { errors }  } = useForm({
         defaultValues: { email: email },
-        mode: "onBlur",
+        mode: "onTouched",
         resolver: yupResolver(schema)
     });
 

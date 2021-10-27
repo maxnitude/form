@@ -15,7 +15,7 @@ const Step1Form = ({ addedPassword, password }) => {
 
     const { register, handleSubmit, formState: { errors }  } = useForm({
         defaultValues: { password: password },
-        mode: "all",
+        mode: "onTouched",
     });
 
     const onSubmit = () => {

@@ -45,7 +45,7 @@ const EndPage = ({changeHeader, state}) => {
                         {personalData.map((item) => (
                             <TableRow key={item[0]}>
                                 <TableCell component="th" scope="row">
-                                    {item[0]}
+                                    {item[0][0].toUpperCase() + item[0].slice(1)}
                                 </TableCell>
                                 <TableCell align="right">{item[1].toString()}</TableCell>
                             </TableRow>

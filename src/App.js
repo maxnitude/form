@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Header />
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path='/' component={Step1Form} />
           <Route exact path='/step2' component={Step2Form} />
